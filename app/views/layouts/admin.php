@@ -24,9 +24,10 @@ $currentUri = parse_url($_SERVER['REQUEST_URI'] ?? '/admin', PHP_URL_PATH);
 
   <!-- Admin Dark Sidebar -->
   <aside class="admin-sidebar">
-    <div class="admin-sidebar-brand">
-      <div style="color: var(--gold);"><?= icon('crown') ?></div>
-      <div class="admin-brand-text">Luxury Club</div>
+    <div class="admin-sidebar-brand" style="padding: 16px 20px;">
+      <a href="<?= url('/admin') ?>" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="<?= asset('/assets/img/logo.png') ?>" alt="Luxury Club" style="height: 38px; width: auto; object-fit: contain;">
+      </a>
     </div>
 
     <ul class="admin-nav">

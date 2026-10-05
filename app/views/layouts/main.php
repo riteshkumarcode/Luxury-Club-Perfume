@@ -14,6 +14,10 @@ $csrf = csrf_token();
   <link rel="canonical" href="<?= e($meta['canonical']) ?>">
   <meta name="csrf-token" content="<?= e($csrf) ?>">
 
+  <!-- Favicon / Brand Icon -->
+  <link rel="icon" type="image/png" href="<?= asset('/assets/img/logo.png') ?>">
+  <link rel="apple-touch-icon" href="<?= asset('/assets/img/logo.png') ?>">
+
   <!-- Open Graph / Social -->
   <meta property="og:type" content="<?= e($meta['og_type']) ?>">
   <meta property="og:title" content="<?= e($meta['title']) ?>">

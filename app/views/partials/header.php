@@ -57,10 +57,8 @@ $currentUri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
 
     <!-- Center Brand Logo -->
     <div class="header-center">
-      <a href="<?= url('/') ?>" class="site-logo">
-        <div class="logo-crown"><?= icon('crown') ?></div>
-        <div class="logo-title">Luxury Club</div>
-        <div class="logo-tagline">The Magic of Luxury Fragrances</div>
+      <a href="<?= url('/') ?>" class="site-logo" aria-label="Luxury Club Home">
+        <img src="<?= asset('/assets/img/logo.png') ?>" alt="Luxury Club — The Magic of Luxury Fragrances" class="site-logo-img">
       </a>
     </div>
 
@@ -87,28 +85,36 @@ $currentUri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
   </div>
 
   <!-- Fullscreen Mobile Navigation Drawer -->
-  <div class="mobile-nav-drawer" data-lenis-prevent>
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer" data-lenis-prevent aria-hidden="true">
     <div class="mobile-nav-header">
-      <div class="site-logo">
-        <div class="logo-crown"><?= icon('crown') ?></div>
-        <div class="logo-title">Luxury Club</div>
-        <div class="logo-tagline">The Magic of Luxury Fragrances</div>
-      </div>
+      <a href="<?= url('/') ?>" class="site-logo mobile-logo" aria-label="Luxury Club Home">
+        <img src="<?= asset('/assets/img/logo.png') ?>" alt="Luxury Club — The Magic of Luxury Fragrances" class="mobile-logo-img">
+      </a>
       <button type="button" class="mobile-nav-close" aria-label="Close menu"><?= icon('close') ?></button>
     </div>
     <ul class="mobile-nav-list">
-      <li><a href="<?= url('/') ?>" class="<?= $currentUri === '/' ? 'active' : '' ?>">Home</a></li>
-      <li><a href="<?= url('/shop') ?>" class="<?= $currentUri === '/shop' ? 'active' : '' ?>">Shop All Fragrances</a></li>
-      <?php foreach ($categories as $cat): ?>
-        <li><a href="<?= url('/shop/' . $cat['slug']) ?>" class="mobile-nav-category-link <?= $currentUri === '/shop/' . $cat['slug'] ? 'active' : '' ?>">↳ <?= e($cat['name']) ?></a></li>
-      <?php endforeach; ?>
-      <li><a href="<?= url('/about') ?>" class="<?= $currentUri === '/about' ? 'active' : '' ?>">Our Story</a></li>
-      <li><a href="<?= url('/contact') ?>" class="<?= $currentUri === '/contact' ? 'active' : '' ?>">Concierge & Contact</a></li>
-      <li><a href="<?= url('/faq') ?>" class="<?= $currentUri === '/faq' ? 'active' : '' ?>">FAQ</a></li>
+      <li><a href="<?= url('/') ?>" class="mobile-nav-link <?= $currentUri === '/' ? 'active' : '' ?>">Home</a></li>
+      <li class="mobile-nav-group">
+        <a href="<?= url('/shop') ?>" class="mobile-nav-link <?= str_starts_with($currentUri, '/shop') ? 'active' : '' ?>">
+          Shop All Fragrances
+        </a>
+        <div class="mobile-categories-sub">
+          <?php foreach ($categories as $cat): ?>
+            <a href="<?= url('/shop/' . $cat['slug']) ?>" class="mobile-sub-link <?= $currentUri === '/shop/' . $cat['slug'] ? 'active' : '' ?>">
+              <span class="sub-dot">•</span> <?= e($cat['name']) ?>
+            </a>
+          <?php endforeach; ?>
+        </div>
+      </li>
+      <li><a href="<?= url('/about') ?>" class="mobile-nav-link <?= $currentUri === '/about' ? 'active' : '' ?>">Our Story</a></li>
+      <li><a href="<?= url('/experience') ?>" class="mobile-nav-link <?= $currentUri === '/experience' ? 'active' : '' ?>">VIP Ad Collection</a></li>
+      <li><a href="<?= url('/#bulk-orders') ?>" class="mobile-nav-link">Bulk & Wedding Gifting</a></li>
+      <li><a href="<?= url('/contact') ?>" class="mobile-nav-link <?= $currentUri === '/contact' ? 'active' : '' ?>">Concierge & Contact</a></li>
+      <li><a href="<?= url('/faq') ?>" class="mobile-nav-link <?= $currentUri === '/faq' ? 'active' : '' ?>">Fragrance FAQ</a></li>
     </ul>
     <div class="mobile-nav-footer">
-      <a href="<?= url('/shop') ?>" class="btn btn-primary btn-block">Explore Collection</a>
-      <div style="display: flex; justify-content: center; gap: 20px; color: var(--gold); font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 8px;">
+      <a href="<?= url('/shop') ?>" class="btn btn-primary btn-block">Explore Entire Collection</a>
+      <div class="mobile-nav-perks">
         <span>Free Shipping > ₹999</span>
         <span>•</span>
         <span>100% Authentic</span>

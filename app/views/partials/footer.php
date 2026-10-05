@@ -16,10 +16,8 @@ $youtube = get_setting('youtube_url', 'https://youtube.com/luxuryclub');
       
       <!-- Brand Column -->
       <div class="footer-brand">
-        <a href="<?= url('/') ?>" class="site-logo" style="align-items: flex-start;">
-          <div class="logo-crown"><?= icon('crown') ?></div>
-          <div class="logo-title">Luxury Club</div>
-          <div class="logo-tagline">The Magic of Luxury Fragrances</div>
+        <a href="<?= url('/') ?>" class="site-logo footer-logo" aria-label="Luxury Club Home">
+          <img src="<?= asset('/assets/img/logo.png') ?>" alt="Luxury Club — The Magic of Luxury Fragrances" class="footer-logo-img">
         </a>
         <p><?= e($address) ?></p>
         <p style="margin-top: 8px;">

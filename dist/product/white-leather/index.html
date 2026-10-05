@@ -6,7 +6,11 @@
   <title>White Leather Roll-on Attar 10ml | Luxury Club</title>
   <meta name="description" content="White Leather Attar 10ml by Luxury Club. Pure suede and Tuscan iris in an alcohol-free roll-on.">
   <link rel="canonical" href="/">
-  <meta name="csrf-token" content="4ac15596e76d6c81ae2f8ae6fec18edd0c46704a1ab8c95881a8c312c8928fde">
+  <meta name="csrf-token" content="b15e56542022b5fc9b6ff93487f856b91d3cd1afea85f2168c958cd9a6d4eba9">
+
+  <!-- Favicon / Brand Icon -->
+  <link rel="icon" type="image/png" href="/assets/img/logo.png?v=1772898450">
+  <link rel="apple-touch-icon" href="/assets/img/logo.png?v=1772898450">
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="product">
@@ -25,8 +29,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
   <!-- Hand-written Design System CSS -->
-  <link rel="stylesheet" href="/assets/css/app.css?v=1791185980">
-  <link rel="stylesheet" href="/assets/css/components.css?v=1791186040">
+  <link rel="stylesheet" href="/assets/css/app.css?v=1791231434">
+  <link rel="stylesheet" href="/assets/css/components.css?v=1791231446">
   <link rel="stylesheet" href="/assets/css/pages.css?v=1791208169">
 
   <!-- JSON-LD Structured Data -->
@@ -165,17 +169,8 @@
 
     <!-- Center Brand Logo -->
     <div class="header-center">
-      <a href="/" class="site-logo">
-        <div class="logo-crown"><svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M3 18h18v2H3z" />
-  <path d="M4 18l2-11 5 6 5-6 2 11H4z" />
-  <circle cx="6" cy="6" r="1.2" fill="currentColor" />
-  <circle cx="12" cy="4" r="1.2" fill="currentColor" />
-  <circle cx="18" cy="6" r="1.2" fill="currentColor" />
-</svg>
-</div>
-        <div class="logo-title">Luxury Club</div>
-        <div class="logo-tagline">The Magic of Luxury Fragrances</div>
+      <a href="/" class="site-logo" aria-label="Luxury Club Home">
+        <img src="/assets/img/logo.png?v=1772898450" alt="Luxury Club — The Magic of Luxury Fragrances" class="site-logo-img">
       </a>
     </div>
 
@@ -211,20 +206,11 @@
   </div>
 
   <!-- Fullscreen Mobile Navigation Drawer -->
-  <div class="mobile-nav-drawer" data-lenis-prevent>
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer" data-lenis-prevent aria-hidden="true">
     <div class="mobile-nav-header">
-      <div class="site-logo">
-        <div class="logo-crown"><svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M3 18h18v2H3z" />
-  <path d="M4 18l2-11 5 6 5-6 2 11H4z" />
-  <circle cx="6" cy="6" r="1.2" fill="currentColor" />
-  <circle cx="12" cy="4" r="1.2" fill="currentColor" />
-  <circle cx="18" cy="6" r="1.2" fill="currentColor" />
-</svg>
-</div>
-        <div class="logo-title">Luxury Club</div>
-        <div class="logo-tagline">The Magic of Luxury Fragrances</div>
-      </div>
+      <a href="/" class="site-logo mobile-logo" aria-label="Luxury Club Home">
+        <img src="/assets/img/logo.png?v=1772898450" alt="Luxury Club — The Magic of Luxury Fragrances" class="mobile-logo-img">
+      </a>
       <button type="button" class="mobile-nav-close" aria-label="Close menu"><svg class="" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
   <line x1="18" y1="6" x2="6" y2="18"/>
   <line x1="6" y1="6" x2="18" y2="18"/>
@@ -232,19 +218,31 @@
 </button>
     </div>
     <ul class="mobile-nav-list">
-      <li><a href="/" class="active">Home</a></li>
-      <li><a href="/shop" class="">Shop All Fragrances</a></li>
-              <li><a href="/shop/eau-de-parfum" class="mobile-nav-category-link ">↳ Eau de Parfum</a></li>
-              <li><a href="/shop/attars" class="mobile-nav-category-link ">↳ Roll-on Attars</a></li>
-              <li><a href="/shop/car-pods" class="mobile-nav-category-link ">↳ Car Hanging Pods</a></li>
-              <li><a href="/shop/candles" class="mobile-nav-category-link ">↳ Scented Candles</a></li>
-            <li><a href="/about" class="">Our Story</a></li>
-      <li><a href="/contact" class="">Concierge & Contact</a></li>
-      <li><a href="/faq" class="">FAQ</a></li>
+      <li><a href="/" class="mobile-nav-link active">Home</a></li>
+      <li class="mobile-nav-group">
+        <a href="/shop" class="mobile-nav-link ">
+          Shop All Fragrances
+        </a>
+        <div class="mobile-categories-sub">
+                      <a href="/shop/eau-de-parfum" class="mobile-sub-link ">
+              <span class="sub-dot">•</span> Eau de Parfum            </a>
+                      <a href="/shop/attars" class="mobile-sub-link ">
+              <span class="sub-dot">•</span> Roll-on Attars            </a>
+                      <a href="/shop/car-pods" class="mobile-sub-link ">
+              <span class="sub-dot">•</span> Car Hanging Pods            </a>
+                      <a href="/shop/candles" class="mobile-sub-link ">
+              <span class="sub-dot">•</span> Scented Candles            </a>
+                  </div>
+      </li>
+      <li><a href="/about" class="mobile-nav-link ">Our Story</a></li>
+      <li><a href="/experience" class="mobile-nav-link ">VIP Ad Collection</a></li>
+      <li><a href="/#bulk-orders" class="mobile-nav-link">Bulk & Wedding Gifting</a></li>
+      <li><a href="/contact" class="mobile-nav-link ">Concierge & Contact</a></li>
+      <li><a href="/faq" class="mobile-nav-link ">Fragrance FAQ</a></li>
     </ul>
     <div class="mobile-nav-footer">
-      <a href="/shop" class="btn btn-primary btn-block">Explore Collection</a>
-      <div style="display: flex; justify-content: center; gap: 20px; color: var(--gold); font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 8px;">
+      <a href="/shop" class="btn btn-primary btn-block">Explore Entire Collection</a>
+      <div class="mobile-nav-perks">
         <span>Free Shipping > ₹999</span>
         <span>•</span>
         <span>100% Authentic</span>
@@ -615,7 +613,7 @@
             </div>
             <div class="layering-plus">+</div>
             <div class="bottle-glow" style="background-color: rgba(212, 163, 115, 0.2);">
-              <img src="/assets/img/products/product-1.png?v=1791216672" alt="Layering Pairing">
+              <img src="/assets/img/products/product-1.png?v=1791231483" alt="Layering Pairing">
             </div>
           </div>
         </div>
@@ -915,7 +913,7 @@
     <p>Receive private invitations to limited olfactory editions, private masterclasses, and complimentary express shipping privileges.</p>
 
     <form class="newsletter-form" action="/api/newsletter" method="POST">
-      <input type="hidden" name="_csrf_token" value="4ac15596e76d6c81ae2f8ae6fec18edd0c46704a1ab8c95881a8c312c8928fde">      <!-- Honeypot for bot detection -->
+      <input type="hidden" name="_csrf_token" value="b15e56542022b5fc9b6ff93487f856b91d3cd1afea85f2168c958cd9a6d4eba9">      <!-- Honeypot for bot detection -->
       <input type="text" name="website_hp" style="display:none;" tabindex="-1" autocomplete="off">
       <input type="email" name="email" class="newsletter-input" placeholder="Enter your email address" required aria-label="Your email address">
       <button type="submit" class="btn btn-dark">Subscribe</button>
@@ -934,17 +932,8 @@
       
       <!-- Brand Column -->
       <div class="footer-brand">
-        <a href="/" class="site-logo" style="align-items: flex-start;">
-          <div class="logo-crown"><svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M3 18h18v2H3z" />
-  <path d="M4 18l2-11 5 6 5-6 2 11H4z" />
-  <circle cx="6" cy="6" r="1.2" fill="currentColor" />
-  <circle cx="12" cy="4" r="1.2" fill="currentColor" />
-  <circle cx="18" cy="6" r="1.2" fill="currentColor" />
-</svg>
-</div>
-          <div class="logo-title">Luxury Club</div>
-          <div class="logo-tagline">The Magic of Luxury Fragrances</div>
+        <a href="/" class="site-logo footer-logo" aria-label="Luxury Club Home">
+          <img src="/assets/img/logo.png?v=1772898450" alt="Luxury Club — The Magic of Luxury Fragrances" class="footer-logo-img">
         </a>
         <p>Luxury Club Atelier, Suite 402, Signature Towers, Mumbai, Maharashtra 400001 (TODO: Client address)</p>
         <p style="margin-top: 8px;">
@@ -1203,6 +1192,6 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
   <!-- Main ES6 Application Script -->
-  <script type="module" src="/assets/js/app.js?v=1791208193"></script>
+  <script type="module" src="/assets/js/app.js?v=1791231456"></script>
 </body>
 </html>

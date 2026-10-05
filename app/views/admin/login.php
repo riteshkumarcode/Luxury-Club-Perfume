@@ -16,12 +16,9 @@
 
   <div style="max-width: 420px; width: 100%; background: #17130E; border: 1px solid rgba(226, 217, 201, 0.15); border-radius: var(--radius-panel); padding: 44px 36px; box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
     
-    <div style="text-align: center; margin-bottom: 32px;">
-      <div style="color: var(--gold); margin-bottom: 8px;"><?= icon('crown') ?></div>
-      <div style="font-family: var(--font-serif); font-size: 24px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream);">
-        Luxury Club
-      </div>
-      <div style="font-size: 11px; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; margin-top: 4px;">
+    <div style="text-align: center; margin-bottom: 28px;">
+      <img src="<?= asset('/assets/img/logo.png') ?>" alt="Luxury Club" style="height: 64px; width: auto; object-fit: contain; margin-bottom: 12px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));">
+      <div style="font-size: 11px; letter-spacing: 0.12em; color: var(--gold); text-transform: uppercase;">
         Atelier Management Portal
       </div>
     </div>

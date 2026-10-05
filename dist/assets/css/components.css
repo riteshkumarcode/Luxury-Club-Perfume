@@ -189,21 +189,34 @@
   position: relative;
 }
 
-.mega-menu {
+.nav-item-has-mega::after {
+  content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(10px);
-  width: 960px;
-  background-color: var(--ink);
-  border: 1px solid rgba(226, 217, 201, 0.15);
+  left: -20px;
+  right: -20px;
+  height: 20px;
+  background: transparent;
+  display: block;
+}
+
+.mega-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: -40px;
+  width: min(880px, calc(100vw - 80px));
+  background-color: rgba(13, 11, 8, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 163, 115, 0.25);
   border-radius: var(--radius-panel);
-  padding: 32px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  padding: 28px 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 163, 115, 0.08);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: all 0.3s var(--ease-luxury);
+  transition: opacity 0.25s var(--ease-luxury), transform 0.25s var(--ease-luxury), visibility 0.25s;
+  transform: translateY(8px);
   z-index: 105;
 }
 
@@ -212,7 +225,7 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
 }
 
 .mega-grid {
