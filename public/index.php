@@ -61,6 +61,7 @@ $router->get('/product/{slug}', [\App\Controllers\ProductController::class, 'sho
 $router->get('/about', [\App\Controllers\PageController::class, 'about']);
 $router->get('/contact', [\App\Controllers\ContactController::class, 'show']);
 $router->get('/faq', [\App\Controllers\PageController::class, 'faq']);
+$router->get('/experience', [\App\Controllers\LandingController::class, 'experience']);
 $router->get('/cart', [\App\Controllers\CartController::class, 'show']);
 $router->get('/wishlist', [\App\Controllers\WishlistController::class, 'show']);
 $router->get('/checkout', [\App\Controllers\CheckoutController::class, 'show']);

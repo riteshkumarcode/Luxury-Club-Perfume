@@ -123,6 +123,9 @@ writePage('contact/index.html', renderRoute(\App\Controllers\ContactController::
 // FAQ
 writePage('faq/index.html', renderRoute(\App\Controllers\PageController::class, 'faq'));
 
+// Special Ad Experience Landing Page
+writePage('experience/index.html', renderRoute(\App\Controllers\LandingController::class, 'experience'));
+
 // Cart
 writePage('cart/index.html', renderRoute(\App\Controllers\CartController::class, 'show'));
 
@@ -160,6 +163,7 @@ $staticUrls = [
     ['url' => url('/'), 'priority' => '1.0', 'changefreq' => 'daily'],
     ['url' => url('/shop'), 'priority' => '0.9', 'changefreq' => 'daily'],
     ['url' => url('/about'), 'priority' => '0.7', 'changefreq' => 'monthly'],
+    ['url' => url('/experience'), 'priority' => '0.8', 'changefreq' => 'weekly'],
     ['url' => url('/contact'), 'priority' => '0.7', 'changefreq' => 'monthly'],
     ['url' => url('/faq'), 'priority' => '0.6', 'changefreq' => 'monthly'],
     ['url' => url('/policies/shipping'), 'priority' => '0.5', 'changefreq' => 'yearly'],

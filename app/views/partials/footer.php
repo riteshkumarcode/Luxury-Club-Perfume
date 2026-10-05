@@ -44,9 +44,10 @@ $youtube = get_setting('youtube_url', 'https://youtube.com/luxuryclub');
         <h4>Experience</h4>
         <ul class="footer-nav">
           <li><a href="<?= url('/about') ?>">Our Story</a></li>
+          <li><a href="<?= url('/experience') ?>">VIP Ad Collection</a></li>
+          <li><a href="<?= url('/#bulk-orders') ?>">Bulk & Wedding Gifting</a></li>
           <li><a href="<?= url('/contact') ?>">Concierge & Support</a></li>
           <li><a href="<?= url('/faq') ?>">Fragrance FAQ</a></li>
-          <li><a href="<?= url('/wishlist') ?>">Saved Fragrances</a></li>
         </ul>
       </div>
 

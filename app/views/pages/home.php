@@ -188,10 +188,91 @@ use App\Core\View;
   </div>
 </section>
 
+<!-- NEW: The Private Vault / Haute Parfumerie Reserve -->
+<section class="section section-dark private-reserve-section" aria-label="Private Reserve Collection">
+  <div class="container">
+    <div class="private-reserve-header">
+      <div class="vault-badge">✦ PRIVATE ATELIER RESERVE ✦</div>
+      <h2 style="color: var(--cream);">The Masterpiece Reserve</h2>
+      <p style="max-width: 580px; margin: 12px auto 0; color: var(--muted-dark); font-size: 15px;">
+        Extracted through micro-batch hydro-distillation. Two signature creations crafted for monumental occasions and supreme longevity.
+      </p>
+    </div>
+
+    <div class="private-reserve-grid" data-reveal-grid>
+      
+      <!-- Vault Masterpiece 1: Royal Oud -->
+      <div class="vault-card" style="background: radial-gradient(circle at 50% 30%, #1a1610 0%, #0d0b08 100%);">
+        <div class="vault-card-badge">Private Reserve • 16h+ Longevity</div>
+        <div class="vault-card-flacon" style="background-color: #ECE6DA;">
+          <img src="<?= asset('/assets/img/products/royal-oud.png') ?>" alt="Royal Oud Extrait de Parfum" loading="lazy">
+        </div>
+        <div class="vault-card-body">
+          <div class="vault-eyebrow">AGED CAMBODIAN AGARWOOD · 100 ML</div>
+          <h3 class="vault-title">Royal Oud</h3>
+          <p class="vault-desc">Deep smoky agarwood laced with saffron, warm amber resin, and velvety Taif rose. A commanding presence in solid black glass.</p>
+          
+          <div class="vault-accords">
+            <span class="accord-pill">Smoky Oud</span>
+            <span class="accord-pill">Warm Amber</span>
+            <span class="accord-pill">Rare Saffron</span>
+            <span class="accord-pill">Taif Rose</span>
+          </div>
+
+          <div class="vault-card-bottom">
+            <div class="vault-price">₹1,699 <span class="tax-tag">Inclusive of all taxes</span></div>
+            <div class="vault-actions">
+              <button type="button" class="btn btn-primary" data-add-to-bag="3" data-name="Royal Oud" data-price="1699">
+                Add to Bag
+              </button>
+              <a href="<?= url('/product/royal-oud') ?>" class="btn btn-outline-light">
+                Explore Flacon
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vault Masterpiece 2: Red Crystal -->
+      <div class="vault-card" style="background: radial-gradient(circle at 50% 30%, #200d11 0%, #0d0b08 100%);">
+        <div class="vault-card-badge">New Release • Sillage Master</div>
+        <div class="vault-card-flacon" style="background-color: #F4E0E0;">
+          <img src="<?= asset('/assets/img/products/red-crystal.png') ?>" alt="Red Crystal Eau de Parfum" loading="lazy">
+        </div>
+        <div class="vault-card-body">
+          <div class="vault-eyebrow">CRIMSON DAMASK ROSE · 100 ML</div>
+          <h3 class="vault-title">Red Crystal</h3>
+          <p class="vault-desc">Radiant French Damask rose petals kissed with sparkling pomegranate nectar, spun sugar, and seductive white musk in crimson crystal.</p>
+          
+          <div class="vault-accords">
+            <span class="accord-pill">French Rose</span>
+            <span class="accord-pill">Pomegranate</span>
+            <span class="accord-pill">Spun Sugar</span>
+            <span class="accord-pill">White Musk</span>
+          </div>
+
+          <div class="vault-card-bottom">
+            <div class="vault-price">₹1,499 <span class="tax-tag">Inclusive of all taxes</span></div>
+            <div class="vault-actions">
+              <button type="button" class="btn btn-primary" data-add-to-bag="2" data-name="Red Crystal" data-price="1499">
+                Add to Bag
+              </button>
+              <a href="<?= url('/product/red-crystal') ?>" class="btn btn-outline-light">
+                Explore Flacon
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- 7.4 "The Whole Collection, In Motion" Infinite Marquee -->
 <section class="marquee-band" aria-label="Product Showcase Marquee">
   <div class="marquee-band-track">
-    <?php for ($i = 0; $i < 2; $i++): // Duplicate for continuous flow ?>
+    <?php for ($i = 0; $i < 2; $i++): ?>
       <?php foreach ($allProducts as $p): ?>
         <a href="<?= url('/product/' . $p['slug']) ?>" class="marquee-product-tile">
           <div class="marquee-tile-media" style="background-color: <?= e($p['tint']) ?>;">
@@ -250,8 +331,87 @@ use App\Core\View;
   </div>
 </section>
 
+<!-- NEW: Interactive Scent Finder Quiz Section -->
+<section class="section" style="background-color: var(--ivory);" id="scent-finder">
+  <div class="container">
+    <div class="scent-quiz-box" data-reveal>
+      
+      <div class="scent-quiz-header">
+        <span class="eyebrow">OLFACTORY CONCIERGE</span>
+        <h2>Discover Your Signature Scent</h2>
+        <p>Answer 3 quick questions to unlock the fragrance formulation tailored to your aura.</p>
+      </div>
+
+      <!-- Quiz Step Container -->
+      <div class="quiz-container" id="quiz-app">
+        
+        <!-- Step 1 -->
+        <div class="quiz-step active" data-step="1">
+          <div class="quiz-step-label">QUESTION 1 OF 3 • YOUR PREFERRED VIBE</div>
+          <h3 class="quiz-question">How do you want to feel when you wear your scent?</h3>
+          <div class="quiz-options-grid">
+            <button type="button" class="quiz-opt-btn" data-choice="royal">
+              <div class="opt-icon">👑</div>
+              <div class="opt-title">Regal & Unforgettable</div>
+              <div class="opt-desc">Deep, smoky woods, amber resin and heavy presence</div>
+            </button>
+            <button type="button" class="quiz-opt-btn" data-choice="fresh">
+              <div class="opt-icon">🌊</div>
+              <div class="opt-title">Fresh & Invigorating</div>
+              <div class="opt-desc">Aquatic breezes, crisp bergamot and radiant florals</div>
+            </button>
+            <button type="button" class="quiz-opt-btn" data-choice="romantic">
+              <div class="opt-icon">🌹</div>
+              <div class="opt-title">Romantic & Seductive</div>
+              <div class="opt-desc">Damask rose, spun sugar and warm vanilla musk</div>
+            </button>
+            <button type="button" class="quiz-opt-btn" data-choice="calm">
+              <div class="opt-icon">🕯️</div>
+              <div class="opt-title">Serene & Comforting</div>
+              <div class="opt-desc">Blooming jasmine, soft sandalwood and clean air</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="quiz-step" data-step="2" style="display: none;">
+          <div class="quiz-step-label">QUESTION 2 OF 3 • SCENT INTENSITY</div>
+          <h3 class="quiz-question">What format best suits your daily ritual?</h3>
+          <div class="quiz-options-grid">
+            <button type="button" class="quiz-opt-btn" data-choice="edp">
+              <div class="opt-icon">✨</div>
+              <div class="opt-title">Eau de Parfum (100ml)</div>
+              <div class="opt-desc">Full flacon spray with radiant sillage and crystal cap</div>
+            </button>
+            <button type="button" class="quiz-opt-btn" data-choice="attar">
+              <div class="opt-icon">💎</div>
+              <div class="opt-title">Roll-on Attar (10ml)</div>
+              <div class="opt-desc">100% alcohol-free pure oil for intimate, 14h+ lasting</div>
+            </button>
+            <button type="button" class="quiz-opt-btn" data-choice="lifestyle">
+              <div class="opt-icon">🌿</div>
+              <div class="opt-title">Ambiance & Travel</div>
+              <div class="opt-desc">Soy candles for the room or car hanging diffuser pods</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3: Result Match -->
+        <div class="quiz-step quiz-result-step" data-step="3" style="display: none;">
+          <div class="quiz-result-badge">YOUR PERFECT MATCH</div>
+          <div class="quiz-result-card" id="quiz-result-content">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- 7.6 Spotlights (Candles & Car Pods) -->
-<section class="section" aria-label="Lifestyle Spotlights">
+<section class="section" aria-label="Lifestyle Spotlights" style="background-color: var(--sand);">
   <div class="container">
     <div class="spotlights-grid" data-reveal-grid>
       
@@ -279,6 +439,137 @@ use App\Core\View;
           </a>
         </div>
         <img src="<?= asset('/assets/img/products/pod-red.png') ?>" alt="Hanging Pod Red" class="spotlight-img" loading="lazy">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEW: Bulk, Corporate & Wedding Gifting Concierge Section -->
+<section class="section bulk-gifting-section" aria-labelledby="gifting-heading" id="bulk-orders">
+  <div class="container">
+    <div class="bulk-gifting-grid">
+      
+      <!-- Left Info Column -->
+      <div class="bulk-info" data-reveal>
+        <span class="eyebrow" style="color: var(--gold-deep);">BESPOKE ATELIER SERVICES</span>
+        <h2 id="gifting-heading" style="margin-bottom: 20px;">Corporate Gifting & Grand Wedding Favours</h2>
+        <p style="font-size: 16px; line-height: 1.7; color: var(--muted); margin-bottom: 28px;">
+          Make an everlasting impression. Whether curating executive hampers for board members, festive corporate celebrations, or bespoke 10ml attar flacons for luxury wedding guests, our concierge delivers bespoke excellence.
+        </p>
+
+        <div class="gifting-perks-list">
+          <div class="gifting-perk-item">
+            <div class="gifting-perk-icon">🎁</div>
+            <div>
+              <strong>Custom Velvet & Gold Crest Packaging</strong>
+              <p>Personalized ribbons, custom crest tags, and calligraphed gift cards.</p>
+            </div>
+          </div>
+
+          <div class="gifting-perk-item">
+            <div class="gifting-perk-icon">💎</div>
+            <div>
+              <strong>Tiered Volume Privileges</strong>
+              <p>Exclusive atelier rates on bulk orders starting from 25+ units.</p>
+            </div>
+          </div>
+
+          <div class="gifting-perk-item">
+            <div class="gifting-perk-icon">⚡</div>
+            <div>
+              <strong>Dedicated Concierge & Pan-India Dispatch</strong>
+              <p>Sample boxes dispatched in 48 hours with insured multi-destination delivery.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bulk-actions" style="margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="https://wa.me/919876543210?text=Hello%20Luxury%20Club%20Concierge,%20I%20would%20like%20to%20inquire%20about%20Bulk%20and%20Corporate%20Gifting." target="_blank" rel="noopener" class="btn btn-primary" data-magnetic>
+            <?= icon('whatsapp') ?> Chat with Gifting Concierge
+          </a>
+          <a href="<?= url('/contact') ?>" class="btn btn-outline" data-magnetic>
+            Send Formal RFP
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Gifting Visual Card -->
+      <div class="bulk-visual" data-reveal>
+        <div class="bulk-card-box">
+          <div class="bulk-card-badge">Bespoke Curation</div>
+          <div class="bulk-flacons-preview">
+            <div class="bf-item bf-1" style="background-color: #ECE6DA;">
+              <img src="<?= asset('/assets/img/products/royal-oud.png') ?>" alt="Royal Oud Gift Flacon">
+            </div>
+            <div class="bf-item bf-2" style="background-color: #F7EED6;">
+              <img src="<?= asset('/assets/img/products/morning-jasmine.png') ?>" alt="Morning Jasmine Candle">
+            </div>
+            <div class="bf-item bf-3" style="background-color: #F6E1E3;">
+              <img src="<?= asset('/assets/img/products/ruby-red.png') ?>" alt="Ruby Red Attar">
+            </div>
+          </div>
+          
+          <div class="bulk-card-footer">
+            <h4>The Royal Wedding & Executive Hamper</h4>
+            <p>100ml Extrait Flacon + 100g Scented Candle + 10ml Pure Attar in velvet lined presentation box.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 13px;">
+              <span style="color: var(--gold-text); font-weight: 700;">Custom Branding Available</span>
+              <span style="color: var(--muted);">Min. 25 Sets</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEW: Connoisseur Testimonials & Press Accolades -->
+<section class="section section-sand" aria-label="Customer Reviews">
+  <div class="container">
+    <div class="section-header-center">
+      <span class="eyebrow">VOICES OF DISTINCTION</span>
+      <h2>What Connoisseurs Say</h2>
+      <p class="section-desc">Over 10,000 discerning patrons wearing the magic across the country.</p>
+    </div>
+
+    <div class="testimonials-home-grid" data-reveal-grid>
+      
+      <div class="home-testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Blue Orchid is an olfactory triumph. The crystal cap and weight of the bottle feel as premium as top Parisian houses, but the alcohol-free formulation is vastly superior for Indian weather."</p>
+        <div class="testi-user">
+          <div class="testi-avatar">VK</div>
+          <div>
+            <strong>Vikramaditya K.</strong> <span class="verified-pill">✓ Verified</span>
+            <div class="testi-product">Blue Orchid EDP (100ml)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Ordered 150 customized roll-on attars for our sister's destination wedding in Udaipur. The guests were raving about the scent longevity and gold crest bottles. Unbeatable service!"</p>
+        <div class="testi-user">
+          <div class="testi-avatar">PG</div>
+          <div>
+            <strong>Pooja & Gaurav</strong> <span class="verified-pill">✓ Wedding Client</span>
+            <div class="testi-product">Custom Royal Oudh Attar Sets</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Red Crystal has become my signature scent. It projection is remarkable without being overwhelming. The complimentary sample vials that came with the package were a lovely touch."</p>
+        <div class="testi-user">
+          <div class="testi-avatar">NR</div>
+          <div>
+            <strong>Nandini R.</strong> <span class="verified-pill">✓ Verified</span>
+            <div class="testi-product">Red Crystal Eau de Parfum</div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -317,3 +608,4 @@ use App\Core\View;
     </div>
   </div>
 </div>
+
