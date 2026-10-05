@@ -913,11 +913,33 @@
   }
 }
 
-.contact-card-box {
-  background: var(--sand);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-card);
-  padding: 40px;
+@media (max-width: 600px) {
+  .spotlight-panel {
+    padding: 32px 20px;
+    min-height: 380px;
+  }
+  .spotlight-img {
+    width: 65%;
+    height: 60%;
+    right: -10px;
+    bottom: -10px;
+    opacity: 0.85;
+  }
+  .pdp-main-image-wrap {
+    padding: 24px;
+  }
+  .pdp-actions-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .pdp-qty-stepper {
+    justify-content: center;
+  }
+  .order-summary-card,
+  .contact-card-box {
+    padding: 24px 18px;
+  }
 }
 
 .story-values-grid {
@@ -928,7 +950,7 @@
 }
 
 @media (max-width: 768px) {
-  story-values-grid {
+  .story-values-grid {
     grid-template-columns: 1fr;
   }
 }

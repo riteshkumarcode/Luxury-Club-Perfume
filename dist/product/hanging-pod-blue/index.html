@@ -6,7 +6,7 @@
   <title>Hanging Pod Blue Car Freshener | Luxury Club</title>
   <meta name="description" content="Luxury Car Hanging Pod in Blue. Oceanic cedar diffuser with wooden cap by Luxury Club.">
   <link rel="canonical" href="http://localhost:8000/">
-  <meta name="csrf-token" content="edbde39807b1fb8a9315377188e796d06e03b2ddb5750a0ca080ef34a78cfafd">
+  <meta name="csrf-token" content="51cf5199bf787c2289b29e426c26d67e605b95bb6222376833682b2e46f31d7e">
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="product">
@@ -25,9 +25,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
   <!-- Hand-written Design System CSS -->
-  <link rel="stylesheet" href="/assets/css/app.css?v=1791184003">
-  <link rel="stylesheet" href="/assets/css/components.css?v=1791182537">
-  <link rel="stylesheet" href="/assets/css/pages.css?v=1791182562">
+  <link rel="stylesheet" href="/assets/css/app.css?v=1791185980">
+  <link rel="stylesheet" href="/assets/css/components.css?v=1791186040">
+  <link rel="stylesheet" href="/assets/css/pages.css?v=1791186015">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -231,10 +231,19 @@
   </div>
 
   <!-- Fullscreen Mobile Navigation Drawer -->
-  <div class="mobile-nav-drawer" style="display:none;" data-lenis-prevent>
+  <div class="mobile-nav-drawer" data-lenis-prevent>
     <div class="mobile-nav-header">
       <div class="site-logo">
+        <div class="logo-crown"><svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 18h18v2H3z" />
+  <path d="M4 18l2-11 5 6 5-6 2 11H4z" />
+  <circle cx="6" cy="6" r="1.2" fill="currentColor" />
+  <circle cx="12" cy="4" r="1.2" fill="currentColor" />
+  <circle cx="18" cy="6" r="1.2" fill="currentColor" />
+</svg>
+</div>
         <div class="logo-title">Luxury Club</div>
+        <div class="logo-tagline">The Magic of Luxury Fragrances</div>
       </div>
       <button type="button" class="mobile-nav-close" aria-label="Close menu"><svg class="" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
   <line x1="18" y1="6" x2="6" y2="18"/>
@@ -243,16 +252,24 @@
 </button>
     </div>
     <ul class="mobile-nav-list">
-      <li><a href="http://localhost:8000/">Home</a></li>
-      <li><a href="http://localhost:8000/shop">Shop All Fragrances</a></li>
-              <li style="padding-left: 20px;"><a href="http://localhost:8000/shop/eau-de-parfum">↳ Eau de Parfum</a></li>
-              <li style="padding-left: 20px;"><a href="http://localhost:8000/shop/attars">↳ Roll-on Attars</a></li>
-              <li style="padding-left: 20px;"><a href="http://localhost:8000/shop/car-pods">↳ Car Hanging Pods</a></li>
-              <li style="padding-left: 20px;"><a href="http://localhost:8000/shop/candles">↳ Scented Candles</a></li>
-            <li><a href="http://localhost:8000/about">About Us</a></li>
-      <li><a href="http://localhost:8000/contact">Contact</a></li>
-      <li><a href="http://localhost:8000/faq">FAQ</a></li>
+      <li><a href="http://localhost:8000/" class="active">Home</a></li>
+      <li><a href="http://localhost:8000/shop" class="">Shop All Fragrances</a></li>
+              <li><a href="http://localhost:8000/shop/eau-de-parfum" class="mobile-nav-category-link ">↳ Eau de Parfum</a></li>
+              <li><a href="http://localhost:8000/shop/attars" class="mobile-nav-category-link ">↳ Roll-on Attars</a></li>
+              <li><a href="http://localhost:8000/shop/car-pods" class="mobile-nav-category-link ">↳ Car Hanging Pods</a></li>
+              <li><a href="http://localhost:8000/shop/candles" class="mobile-nav-category-link ">↳ Scented Candles</a></li>
+            <li><a href="http://localhost:8000/about" class="">Our Story</a></li>
+      <li><a href="http://localhost:8000/contact" class="">Concierge & Contact</a></li>
+      <li><a href="http://localhost:8000/faq" class="">FAQ</a></li>
     </ul>
+    <div class="mobile-nav-footer">
+      <a href="http://localhost:8000/shop" class="btn btn-primary btn-block">Explore Collection</a>
+      <div style="display: flex; justify-content: center; gap: 20px; color: var(--gold); font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 8px;">
+        <span>Free Shipping > ₹999</span>
+        <span>•</span>
+        <span>100% Authentic</span>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -698,7 +715,7 @@
     <p>Receive private invitations to limited olfactory editions, private masterclasses, and complimentary express shipping privileges.</p>
 
     <form class="newsletter-form" action="http://localhost:8000/api/newsletter" method="POST">
-      <input type="hidden" name="_csrf_token" value="edbde39807b1fb8a9315377188e796d06e03b2ddb5750a0ca080ef34a78cfafd">      <!-- Honeypot for bot detection -->
+      <input type="hidden" name="_csrf_token" value="51cf5199bf787c2289b29e426c26d67e605b95bb6222376833682b2e46f31d7e">      <!-- Honeypot for bot detection -->
       <input type="text" name="website_hp" style="display:none;" tabindex="-1" autocomplete="off">
       <input type="email" name="email" class="newsletter-input" placeholder="Enter your email address" required aria-label="Your email address">
       <button type="submit" class="btn btn-dark">Subscribe</button>

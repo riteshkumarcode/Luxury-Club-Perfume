@@ -87,22 +87,32 @@ $currentUri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
   </div>
 
   <!-- Fullscreen Mobile Navigation Drawer -->
-  <div class="mobile-nav-drawer" style="display:none;" data-lenis-prevent>
+  <div class="mobile-nav-drawer" data-lenis-prevent>
     <div class="mobile-nav-header">
       <div class="site-logo">
+        <div class="logo-crown"><?= icon('crown') ?></div>
         <div class="logo-title">Luxury Club</div>
+        <div class="logo-tagline">The Magic of Luxury Fragrances</div>
       </div>
       <button type="button" class="mobile-nav-close" aria-label="Close menu"><?= icon('close') ?></button>
     </div>
     <ul class="mobile-nav-list">
-      <li><a href="<?= url('/') ?>">Home</a></li>
-      <li><a href="<?= url('/shop') ?>">Shop All Fragrances</a></li>
+      <li><a href="<?= url('/') ?>" class="<?= $currentUri === '/' ? 'active' : '' ?>">Home</a></li>
+      <li><a href="<?= url('/shop') ?>" class="<?= $currentUri === '/shop' ? 'active' : '' ?>">Shop All Fragrances</a></li>
       <?php foreach ($categories as $cat): ?>
-        <li style="padding-left: 20px;"><a href="<?= url('/shop/' . $cat['slug']) ?>">↳ <?= e($cat['name']) ?></a></li>
+        <li><a href="<?= url('/shop/' . $cat['slug']) ?>" class="mobile-nav-category-link <?= $currentUri === '/shop/' . $cat['slug'] ? 'active' : '' ?>">↳ <?= e($cat['name']) ?></a></li>
       <?php endforeach; ?>
-      <li><a href="<?= url('/about') ?>">About Us</a></li>
-      <li><a href="<?= url('/contact') ?>">Contact</a></li>
-      <li><a href="<?= url('/faq') ?>">FAQ</a></li>
+      <li><a href="<?= url('/about') ?>" class="<?= $currentUri === '/about' ? 'active' : '' ?>">Our Story</a></li>
+      <li><a href="<?= url('/contact') ?>" class="<?= $currentUri === '/contact' ? 'active' : '' ?>">Concierge & Contact</a></li>
+      <li><a href="<?= url('/faq') ?>" class="<?= $currentUri === '/faq' ? 'active' : '' ?>">FAQ</a></li>
     </ul>
+    <div class="mobile-nav-footer">
+      <a href="<?= url('/shop') ?>" class="btn btn-primary btn-block">Explore Collection</a>
+      <div style="display: flex; justify-content: center; gap: 20px; color: var(--gold); font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 8px;">
+        <span>Free Shipping > ₹999</span>
+        <span>•</span>
+        <span>100% Authentic</span>
+      </div>
+    </div>
   </div>
 </header>
