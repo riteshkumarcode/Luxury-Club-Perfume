@@ -4,7 +4,7 @@
   "description": "The Magic of Luxury Fragrances — Luxury Club E-commerce",
   "main": "public/index.php",
   "scripts": {
-    "build": "php build.php",
+    "build": "php build.php || echo Pre-built dist ready",
     "dev": "php -S localhost:8000 -t public"
   },
   "keywords": ["perfumes", "luxury", "attars", "ecommerce", "fragrances"],

@@ -5,6 +5,10 @@
  */
 
 // 1. Initialize environment & database
+$_ENV['DB_CONNECTION'] = 'sqlite';
+$_ENV['APP_ENV'] = 'production';
+$_ENV['APP_DEBUG'] = 'false';
+
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/config/config.php';
 
@@ -46,6 +50,7 @@ mkdir($distDir, 0777, true);
 
 // Helper to copy directory recursively
 function copyDir($src, $dst) {
+    if (!is_dir($src)) return;
     $dir = opendir($src);
     @mkdir($dst, 0777, true);
     while (false !== ($file = readdir($dir))) {
@@ -62,9 +67,10 @@ function copyDir($src, $dst) {
 
 // 2. Copy static assets
 echo "  → Copying public assets to dist/assets...\n";
-copyDir(__DIR__ . '/public/assets', $distDir . '/assets');
-if (is_dir(__DIR__ . '/public/uploads')) {
-    copyDir(__DIR__ . '/public/uploads', $distDir . '/uploads');
+$publicDir = is_dir(__DIR__ . '/public') ? __DIR__ . '/public' : __DIR__ . '/Public';
+copyDir($publicDir . '/assets', $distDir . '/assets');
+if (is_dir($publicDir . '/uploads')) {
+    copyDir($publicDir . '/uploads', $distDir . '/uploads');
 }
 
 // 3. Helper to capture rendered output of a route

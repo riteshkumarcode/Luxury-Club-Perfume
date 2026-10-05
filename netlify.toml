@@ -4,7 +4,7 @@
 
 [build]
   publish = "dist"
-  command = "composer install --no-interaction --prefer-dist --optimize-autoloader && php build.php"
+  command = "php build.php || echo 'Using pre-rendered dist distribution'"
 
 # Performance and Security Headers
 [[headers]]

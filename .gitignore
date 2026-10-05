@@ -19,6 +19,3 @@ desktop.ini
 node_modules/
 vendor/
 composer.phar
-
-# Build Output (Can be generated via php build.php)
-dist/
