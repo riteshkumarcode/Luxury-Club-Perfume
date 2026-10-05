@@ -1,0 +1,24 @@
+# Environment and secrets
+.env
+.env.backup
+.env.local
+
+# Storage and Logs
+storage/logs/*.log
+storage/cache/*
+storage/*.sqlite
+!storage/logs/.gitkeep
+!storage/cache/.gitkeep
+
+# Operating System
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Dependencies
+node_modules/
+vendor/
+composer.phar
+
+# Build Output (Can be generated via php build.php)
+dist/

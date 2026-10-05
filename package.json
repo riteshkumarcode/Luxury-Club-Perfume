@@ -1,0 +1,13 @@
+{
+  "name": "luxury-club-perfumes",
+  "version": "1.0.0",
+  "description": "The Magic of Luxury Fragrances — Luxury Club E-commerce",
+  "main": "public/index.php",
+  "scripts": {
+    "build": "php build.php",
+    "dev": "php -S localhost:8000 -t public"
+  },
+  "keywords": ["perfumes", "luxury", "attars", "ecommerce", "fragrances"],
+  "author": "Luxury Club Atelier",
+  "license": "UNLICENSED"
+}
