@@ -73,13 +73,30 @@ if (!function_exists('config')) {
 
 if (!function_exists('url')) {
     /**
-     * Return normalized absolute/root-relative URL.
+     * Return normalized root-relative or absolute URL.
      */
-    function url(string $path = ''): string
+    function url(string $path = '', bool $absolute = false): string
     {
-        $baseUrl = rtrim(config('app.url', ''), '/');
-        $path = '/' . ltrim($path, '/');
-        return $path === '/' ? $baseUrl . '/' : $baseUrl . $path;
+        $cleanPath = '/' . ltrim($path, '/');
+        if ($cleanPath === '//') {
+            $cleanPath = '/';
+        }
+
+        if ($absolute) {
+            $baseUrl = rtrim((string)config('app.url', ''), '/');
+            if (empty($baseUrl) || str_contains($baseUrl, 'localhost')) {
+                $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https://' : 'http://';
+                $host = $_SERVER['HTTP_HOST'] ?? '';
+                if ($host && !str_contains($host, 'localhost')) {
+                    $baseUrl = $scheme . $host;
+                } else {
+                    $baseUrl = '';
+                }
+            }
+            return $baseUrl ? $baseUrl . $cleanPath : $cleanPath;
+        }
+
+        return $cleanPath;
     }
 }
 

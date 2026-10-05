@@ -33,7 +33,7 @@ return [
         'tagline' => 'The Magic of Luxury Fragrances',
         'env' => $_ENV['APP_ENV'] ?? 'development',
         'debug' => filter_var($_ENV['APP_DEBUG'] ?? true, FILTER_VALIDATE_BOOLEAN),
-        'url' => rtrim($_ENV['APP_URL'] ?? 'http://localhost:8000', '/'),
+        'url' => rtrim($_ENV['APP_URL'] ?? '', '/'),
         'root_path' => $rootPath,
         'public_path' => $rootPath . '/public',
         'storage_path' => $rootPath . '/storage',

@@ -22,13 +22,11 @@ class View
     public static function getMeta(): array
     {
         if (empty(self::$meta['canonical'])) {
-            $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
-            $host = $_SERVER['HTTP_HOST'] ?? 'localhost:8000';
             $uri = explode('?', $_SERVER['REQUEST_URI'] ?? '/')[0];
-            self::$meta['canonical'] = "$scheme://$host$uri";
+            self::$meta['canonical'] = $uri ?: '/';
         }
         if (empty(self::$meta['og_image'])) {
-            self::$meta['og_image'] = url('/assets/img/products/blue-orchid.png');
+            self::$meta['og_image'] = '/assets/img/products/blue-orchid.png';
         }
         return self::$meta;
     }
